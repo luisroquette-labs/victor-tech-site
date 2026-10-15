@@ -396,13 +396,17 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .mt-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 5vw; }
 .mt-sticky p {
   font-family: var(--font-body); font-weight: 700;
-  font-size: clamp(2.4rem, 7.4vw, 5.6rem); line-height: 1.08; letter-spacing: -0.03em;
-  text-align: center; max-width: min(1040px, 92vw); margin: 0; color: var(--ink);
-  overflow-wrap: anywhere; word-break: break-word;
+  font-size: clamp(2.2rem, 6.6vw, 5.2rem); line-height: 1.12; letter-spacing: -0.03em;
+  text-align: center; max-width: min(1100px, 94vw); margin: 0; color: var(--ink);
 }
+.mt-word { display: inline-block; white-space: nowrap; }
 .mt-c { color: var(--ink); transition: opacity 0.06s linear; }
 .mt-c.accent { color: var(--orange); }
 .mt-caret { color: var(--orange); font-weight: 400; }
+
+/* fita ondulante */
+.ribbon { width: 100%; overflow: hidden; margin: 30px 0 0; }
+.ribbon svg { width: 100%; height: auto; display: block; }
 
 /* galáxia de tiles 3D */
 .galaxy { position: relative; height: 240vh; }

@@ -10,6 +10,8 @@ import WhatsAppSim from "../components/WhatsAppSim";
 import ScrollGallery from "../components/ScrollGallery";
 import ManifestoScroll from "../components/ManifestoScroll";
 import TileGalaxy from "../components/TileGalaxy";
+import ProcessFan from "../components/ProcessFan";
+import WavyRibbon from "../components/WavyRibbon";
 import Accordion from "../components/Accordion";
 import BlogCard from "../components/BlogCard";
 import Nexus from "../components/Nexus";
@@ -80,15 +82,7 @@ export default function Home() {
             <h2>{processo.title}</h2>
             <p className="lead">{processo.lead}</p>
           </Reveal>
-          <div className="fan">
-            {processo.steps.map((s, i) => (
-              <div key={s.n} className={`fan-card c${i + 1}`}>
-                <span className="big-n">{s.n}</span>
-                <h3>{s.title}</h3>
-                <p>{s.body}</p>
-              </div>
-            ))}
-          </div>
+          <ProcessFan steps={processo.steps} />
         </div>
       </section>
 
@@ -232,6 +226,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FITA ONDULANTE */}
+      <WavyRibbon text="Perguntas frequentes" />
 
       {/* FAQ */}
       <section className="section" id="faq">

@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { initAudio } from "./sound";
 
 // Smooth-scroll com inércia (estilo das landing pages premium / Hotmart Launchpad).
 export default function SmoothScroll() {
   useEffect(() => {
+    initAudio();
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
@@ -15,6 +17,8 @@ export default function SmoothScroll() {
       wheelMultiplier: 0.5, // ~metade da distância por wheel -> rolagem ~2x mais lenta
       touchMultiplier: 0.9,
     });
+
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     let raf = 0;
     const loop = (t: number) => {
