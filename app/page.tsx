@@ -1,0 +1,300 @@
+import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
+import Plasma from "../components/Plasma";
+import PromptBox from "../components/PromptBox";
+import StatCounter from "../components/StatCounter";
+import Reveal from "../components/Reveal";
+import RevenueSim from "../components/RevenueSim";
+import WhatsAppSim from "../components/WhatsAppSim";
+import Accordion from "../components/Accordion";
+import BlogCard from "../components/BlogCard";
+import Nexus from "../components/Nexus";
+import { posts } from "./posts";
+import {
+  hero, promptExamples, bigStat, stats, diferenciais, processo, automacao,
+  revenueSim, portfolio, manifesto, sobre, contact, faq, whatsappHref, person,
+} from "./content";
+
+export default function Home() {
+  return (
+    <>
+      <SiteHeader />
+
+      {/* HERO */}
+      <section className="hero" id="inicio">
+        <Plasma />
+        <div className="wrap hero-inner">
+          <span className="eyebrow">⚡ {hero.eyebrow}</span>
+          <h1 className="display">
+            {hero.titleLead} <span className="accent">{hero.titleAccent}</span>
+          </h1>
+          <p className="lead">{hero.lead}</p>
+          <PromptBox examples={promptExamples} />
+          <div className="hero-ctas">
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              {hero.ctaPrimary} →
+            </a>
+            <Link href="#projetos" className="btn btn-ghost">{hero.ctaSecondary}</Link>
+          </div>
+          <div className="hero-badge">
+            <b>{bigStat.prefix}{bigStat.n}{bigStat.suffix}</b> {bigStat.label}
+          </div>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <div className="wrap">
+        <div className="stats-row">
+          {stats.map((s) => (
+            <StatCounter key={s.label} n={s.n} prefix={s.prefix} suffix={s.suffix} label={s.label} />
+          ))}
+        </div>
+      </div>
+
+      {/* DIFERENCIAIS */}
+      <section className="section" id="diferenciais">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="eyebrow">{diferenciais.eyebrow}</span>
+            <h2>{diferenciais.title}</h2>
+            <p className="lead">{diferenciais.lead}</p>
+          </Reveal>
+          <div className="diff-grid">
+            {diferenciais.items.map((it) => (
+              <Reveal key={it.k} className="diff-card">
+                <div className="k">{it.k}</div>
+                <h3>{it.title}</h3>
+                <p>{it.body}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESSO (leque) */}
+      <section className="section" id="processo">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="eyebrow">{processo.eyebrow}</span>
+            <h2>{processo.title}</h2>
+            <p className="lead">{processo.lead}</p>
+          </Reveal>
+          <div className="fan">
+            {processo.steps.map((s, i) => (
+              <div key={s.n} className={`fan-card c${i + 1}`}>
+                <span className="big-n">{s.n}</span>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IA & AUTOMAÇÃO */}
+      <section className="section" id="ia">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="eyebrow cyan">{automacao.eyebrow}</span>
+            <h2>{automacao.title}</h2>
+            <p className="lead">{automacao.lead}</p>
+          </Reveal>
+
+          <div className="automation-layout">
+            <div className="pillars" style={{ gridTemplateColumns: "1fr" }}>
+              {automacao.pillars.map((p) => (
+                <Reveal key={p.tag} className="pillar">
+                  <span className="tag">{p.tag}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.body}</p>
+                  <div className="chips">
+                    {p.chips.map((c) => <span key={c} className="chip">{c}</span>)}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <div>
+              <WhatsAppSim />
+            </div>
+          </div>
+
+          {/* comparativo de horas */}
+          <Reveal className="compare">
+            <div className="section-head" style={{ marginTop: 56, marginBottom: 28 }}>
+              <h2 style={{ fontSize: "2rem" }}>{automacao.compare.title}</h2>
+              <p className="lead">{automacao.compare.lead}</p>
+            </div>
+            <div className="compare-grid">
+              <div className="compare-card bad">
+                <div className="label">Sem automação</div>
+                <div className="num">{automacao.compare.without.n}</div>
+                <div className="unit">{automacao.compare.without.unit}</div>
+                <div className="cap">{automacao.compare.without.caption}</div>
+              </div>
+              <div className="compare-vs">VS</div>
+              <div className="compare-card good">
+                <div className="label">Com IA Victor.Tech</div>
+                <div className="num">{automacao.compare.with.n}</div>
+                <div className="unit">{automacao.compare.with.unit}</div>
+                <div className="cap">{automacao.compare.with.caption}</div>
+              </div>
+            </div>
+            <div className="compare-highlights">
+              {automacao.compare.highlights.map((h) => (
+                <div key={h.label} className="hl">
+                  <b>{h.n}</b>
+                  <span>{h.label}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ textAlign: "center", marginTop: 28 }}>
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-cyan">
+                {automacao.compare.cta} →
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SIMULADOR DE FATURAMENTO */}
+      <section className="section" id="simulador">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="eyebrow">{revenueSim.eyebrow}</span>
+            <h2>{revenueSim.title}</h2>
+            <p className="lead">{revenueSim.lead}</p>
+          </Reveal>
+          <Reveal>
+            <RevenueSim />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PORTFÓLIO */}
+      <section className="section" id="projetos">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="eyebrow">{portfolio.eyebrow}</span>
+            <h2>{portfolio.title}</h2>
+            <p className="lead">{portfolio.lead}</p>
+          </Reveal>
+          <div className="deck">
+            {portfolio.items.map((p) => (
+              <Reveal key={p.slug} className={`proj ${p.accent}`}>
+                <div className="proj-top">
+                  <span className="kind">{p.kind}</span>
+                  <span className="metric">{p.metric}</span>
+                </div>
+                <div>
+                  <div className="giant">{p.name}</div>
+                  <p>{p.blurb}</p>
+                </div>
+                <div className="proj-foot">
+                  <div className="tags">
+                    {p.tags.map((t) => <span key={t}>{t}</span>)}
+                  </div>
+                  <Link href={`/projetos/${p.slug}`} className="arrow">Ver detalhes →</Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="deck-mini">
+            {portfolio.mini.map((m) => (
+              <StatCounter key={m.label} n={m.n} prefix={m.prefix} suffix={m.suffix} label={m.label} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MANIFESTO */}
+      <section className="manifesto">
+        <div className="wrap">
+          <p>
+            {manifesto.lead} <span className="accent">{manifesto.accent}</span>
+          </p>
+        </div>
+      </section>
+
+      {/* SOBRE (teaser) */}
+      <section className="section" id="sobre-teaser">
+        <div className="wrap">
+          <div className="about">
+            <Reveal>
+              <span className="eyebrow">{sobre.eyebrow}</span>
+              <h2>{sobre.title}</h2>
+              <p className="mission">{sobre.mission}</p>
+              <p>{sobre.body}</p>
+              <Link href="/sobre" className="btn btn-ghost" style={{ marginTop: 8 }}>Conhecer o método →</Link>
+            </Reveal>
+            <Reveal>
+              <ul>
+                {sobre.bullets.map((b) => <li key={b}>{b}</li>)}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* BLOG teaser */}
+      <section className="section" id="blog">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="eyebrow cyan">Blog</span>
+            <h2>Conteúdo que gera <span className="em">autoridade</span>.</h2>
+            <p className="lead">Estratégia, performance e automação para transformar o seu digital em um ativo de vendas.</p>
+          </Reveal>
+          <div className="blog-grid">
+            {posts.slice(0, 3).map((p) => <BlogCard key={p.slug} post={p} />)}
+          </div>
+          <div style={{ marginTop: 28 }}>
+            <Link href="/blog" className="btn btn-ghost">Ver todos os artigos →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section" id="faq">
+        <div className="wrap">
+          <Reveal className="section-head" >
+            <span className="eyebrow">{faq.eyebrow}</span>
+            <h2>{faq.title}</h2>
+          </Reveal>
+          <Accordion items={faq.items} />
+        </div>
+      </section>
+
+      {/* CONTATO */}
+      <section className="section" id="contato">
+        <div className="wrap">
+          <Reveal className="contact-band">
+            <span className="eyebrow">{contact.eyebrow}</span>
+            <h2>{contact.title}</h2>
+            <p className="lead">{contact.lead}</p>
+            <div className="contact-meta">
+              <div className="item">
+                <div className="t">Localização</div>
+                <div className="v">{person.location}</div>
+              </div>
+              <div className="item">
+                <div className="t">WhatsApp</div>
+                <div className="v">{person.whatsappLabel}</div>
+              </div>
+              <div className="item">
+                <div className="t">Instagram</div>
+                <div className="v">@{person.instagram}</div>
+              </div>
+            </div>
+            <div className="contact-actions">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Conversar com o Victor →</a>
+              <a href={person.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Ver no Google Maps</a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <SiteFooter />
+      <Nexus />
+    </>
+  );
+}
