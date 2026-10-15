@@ -55,12 +55,16 @@ export default function ScrollGallery({ items }: { items: Item[] }) {
         const r = c.getBoundingClientRect();
         const cx = r.left + r.width / 2;
         const d = (cx - vw / 2) / (vw / 2); // -1 (esq) .. 0 (centro) .. 1 (dir)
-        const rotY = Math.max(-16, Math.min(16, -d * 14));
-        const scale = 1 - Math.min(0.12, Math.abs(d) * 0.08);
-        const op = 1 - Math.min(0.5, Math.abs(d) * 0.4);
-        c.style.transform = `perspective(1600px) rotateY(${rotY}deg) scale(${scale})`;
+        const ad = Math.abs(d);
+        const rotY = Math.max(-30, Math.min(30, -d * 27));
+        const scale = 1 - Math.min(0.24, ad * 0.17);
+        const tz = -Math.min(280, ad * 230);
+        const op = 1 - Math.min(0.58, ad * 0.48);
+        c.style.transform = `perspective(1500px) translateZ(${tz}px) rotateY(${rotY}deg) scale(${scale})`;
         c.style.opacity = String(op);
-        if (Math.abs(d) < bestD) { bestD = Math.abs(d); best = i; }
+        c.style.filter = `brightness(${1 - Math.min(0.4, ad * 0.34)})`;
+        c.style.zIndex = String(100 - Math.round(ad * 50));
+        if (ad < bestD) { bestD = ad; best = i; }
       });
       setActive((prev) => (prev === best ? prev : best));
     };
