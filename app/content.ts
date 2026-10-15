@@ -13,6 +13,8 @@ export const person = {
   instagram: "victor.tech1",
   instagramUrl: "https://instagram.com/victor.tech1",
   mapsUrl: "https://maps.google.com/?q=Seropédica,+Jardim+Maracanã+-+RJ",
+  mapsEmbed: "https://www.google.com/maps?q=Serop%C3%A9dica,+Jardim+Maracan%C3%A3,+RJ&output=embed",
+  dirUrl: "https://www.google.com/maps/dir/?api=1&destination=Serop%C3%A9dica,+Jardim+Maracan%C3%A3,+RJ",
   year: 2026,
 };
 

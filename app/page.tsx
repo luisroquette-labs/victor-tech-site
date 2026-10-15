@@ -13,6 +13,7 @@ import TileGalaxy from "../components/TileGalaxy";
 import ProcessFan from "../components/ProcessFan";
 import WavyRibbon from "../components/WavyRibbon";
 import StackPanels from "../components/StackPanels";
+import ShowcaseDeck from "../components/ShowcaseDeck";
 import Accordion from "../components/Accordion";
 import BlogCard from "../components/BlogCard";
 import Nexus from "../components/Nexus";
@@ -54,6 +55,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SEÇÃO 2 — carrossel editorial (conecta com as pontas de card do hero) */}
+      <ShowcaseDeck />
 
       {/* STATS */}
       <div className="wrap">
@@ -258,26 +262,39 @@ export default function Home() {
       <section className="section" id="contato">
         <div className="wrap">
           <Reveal className="contact-band">
-            <span className="eyebrow">{contact.eyebrow}</span>
-            <h2>{contact.title}</h2>
-            <p className="lead">{contact.lead}</p>
-            <div className="contact-meta">
-              <div className="item">
-                <div className="t">Localização</div>
-                <div className="v">{person.location}</div>
+            <div className="contact-2col">
+              <div className="contact-info">
+                <span className="eyebrow">{contact.eyebrow}</span>
+                <h2>{contact.title}</h2>
+                <p className="lead">{contact.lead}</p>
+                <div className="contact-lines">
+                  <div className="cl">
+                    <span className="cl-ic">📍</span>
+                    <div><span className="cl-t">Localização</span><span className="cl-v">{person.location}</span></div>
+                  </div>
+                  <div className="cl">
+                    <span className="cl-ic">💬</span>
+                    <div><span className="cl-t">WhatsApp</span><span className="cl-v">{person.whatsappLabel}</span></div>
+                  </div>
+                  <div className="cl">
+                    <span className="cl-ic">◎</span>
+                    <div><span className="cl-t">Instagram</span><span className="cl-v">@{person.instagram}</span></div>
+                  </div>
+                </div>
+                <div className="contact-actions">
+                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Conversar com o Victor →</a>
+                  <a href={person.dirUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Como chegar ↗</a>
+                </div>
               </div>
-              <div className="item">
-                <div className="t">WhatsApp</div>
-                <div className="v">{person.whatsappLabel}</div>
+              <div className="contact-map">
+                <iframe
+                  src={person.mapsEmbed}
+                  title="Localização — Seropédica, Jardim Maracanã, RJ"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <a href={person.mapsUrl} target="_blank" rel="noopener noreferrer" className="map-link">Ver no Google Maps ↗</a>
               </div>
-              <div className="item">
-                <div className="t">Instagram</div>
-                <div className="v">@{person.instagram}</div>
-              </div>
-            </div>
-            <div className="contact-actions">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Conversar com o Victor →</a>
-              <a href={person.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Ver no Google Maps</a>
             </div>
           </Reveal>
         </div>
