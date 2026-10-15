@@ -8,6 +8,8 @@ import Reveal from "../components/Reveal";
 import RevenueSim from "../components/RevenueSim";
 import WhatsAppSim from "../components/WhatsAppSim";
 import ScrollGallery from "../components/ScrollGallery";
+import ManifestoScroll from "../components/ManifestoScroll";
+import TileGalaxy from "../components/TileGalaxy";
 import Accordion from "../components/Accordion";
 import BlogCard from "../components/BlogCard";
 import Nexus from "../components/Nexus";
@@ -191,12 +193,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MANIFESTO */}
+      {/* GALÁXIA — voa por um campo de tiles (negócios/serviços) no scroll */}
+      <TileGalaxy />
+
+      {/* MANIFESTO — ilumina palavra por palavra no scroll */}
       <section className="manifesto">
         <div className="wrap">
-          <p>
-            {manifesto.lead} <span className="accent">{manifesto.accent}</span>
-          </p>
+          <ManifestoScroll lead={manifesto.lead} accent={manifesto.accent} />
         </div>
       </section>
 

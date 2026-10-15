@@ -394,6 +394,30 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .manifesto { padding: 120px 0; text-align: center; }
 .manifesto p { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4.6rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.015em; max-width: 16ch; margin: 0 auto; }
 .manifesto .accent { color: var(--orange); font-style: italic; font-weight: 500; }
+.manifesto-scroll p { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4.6rem); font-weight: 500; line-height: 1.12; letter-spacing: -0.015em; max-width: 18ch; margin: 0 auto; text-align: center; }
+.mw { display: inline-block; color: var(--ink); will-change: opacity, filter, transform; }
+.mw.accent { color: var(--orange); font-style: italic; }
+
+/* galáxia de tiles 3D */
+.galaxy { position: relative; height: 240vh; }
+.galaxy-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; place-items: center; perspective: 1100px; }
+.galaxy-field { position: absolute; inset: 0; transform-style: preserve-3d; }
+.galaxy-tile {
+  position: absolute; left: 50%; top: 50%; width: 170px; margin: -24px 0 0 -85px;
+  padding: 12px 14px; border-radius: 12px; text-align: center;
+  font-family: var(--font-ui); font-size: 0.82rem; color: var(--ink);
+  background: rgba(13,16,21,0.92); border: 1px solid var(--line-strong);
+  white-space: nowrap; will-change: transform, opacity;
+}
+.galaxy-tile.orange { border-color: rgba(255,77,18,0.45); box-shadow: 0 0 32px -10px rgba(255,77,18,0.5); }
+.galaxy-tile.cyan { border-color: rgba(40,211,236,0.45); box-shadow: 0 0 32px -10px rgba(40,211,236,0.4); }
+.galaxy-title { position: relative; z-index: 2; text-align: center; pointer-events: none; padding: 0 20px; }
+.galaxy-title h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin-top: 14px; }
+.galaxy-title .em { color: var(--orange); font-style: italic; }
+.galaxy-static { padding: 90px 0; text-align: center; }
+.galaxy-title.static { position: static; }
+.galaxy-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 760px; margin: 32px auto 0; padding: 0 16px; }
+.galaxy-static .galaxy-tile { position: static; width: auto; margin: 0; display: inline-block; }
 
 /* ---------- sobre ---------- */
 .about { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
