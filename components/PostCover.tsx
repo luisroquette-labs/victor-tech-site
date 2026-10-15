@@ -46,7 +46,7 @@ export default function PostCover({ slug }: { slug: string }) {
         return <line key={i} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="rgba(255,122,24,0.18)" strokeWidth="1" />;
       })}
       {nodes.map((n, i) => (
-        <circle key={i} cx={n.x} cy={n.y} r={n.r} fill={n.cyan ? "#28d3ec" : "#ff5a1f"} opacity={0.5 + rnd() * 0.5} />
+        <circle key={i} cx={n.x} cy={n.y} r={n.r} fill={n.cyan ? "#ff2740" : "#ff5a1f"} opacity={0.5 + rnd() * 0.5} />
       ))}
     </svg>
   );

@@ -9,10 +9,11 @@ export default function SmoothScroll() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.6,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.6,
+      wheelMultiplier: 0.5, // ~metade da distância por wheel -> rolagem ~2x mais lenta
+      touchMultiplier: 0.9,
     });
 
     let raf = 0;

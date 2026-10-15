@@ -15,7 +15,7 @@ import BlogCard from "../components/BlogCard";
 import Nexus from "../components/Nexus";
 import { posts } from "./posts";
 import {
-  hero, promptExamples, bigStat, stats, diferenciais, processo, automacao,
+  hero, promptExamples, stats, diferenciais, processo, automacao,
   revenueSim, portfolio, manifesto, sobre, contact, faq, whatsappHref, person,
 } from "./content";
 
@@ -39,9 +39,6 @@ export default function Home() {
               {hero.ctaPrimary} →
             </a>
             <Link href="#projetos" className="btn btn-ghost">{hero.ctaSecondary}</Link>
-          </div>
-          <div className="hero-badge">
-            <b>{bigStat.prefix}{bigStat.n}{bigStat.suffix}</b> {bigStat.label}
           </div>
         </div>
       </section>
@@ -196,12 +193,8 @@ export default function Home() {
       {/* GALÁXIA — voa por um campo de tiles (negócios/serviços) no scroll */}
       <TileGalaxy />
 
-      {/* MANIFESTO — ilumina palavra por palavra no scroll */}
-      <section className="manifesto">
-        <div className="wrap">
-          <ManifestoScroll lead={manifesto.lead} accent={manifesto.accent} />
-        </div>
-      </section>
+      {/* MANIFESTO — máquina de escrever no scroll, com som de teclado */}
+      <ManifestoScroll lead={manifesto.lead} accent={manifesto.accent} />
 
       {/* SOBRE (teaser) */}
       <section className="section" id="sobre-teaser">
