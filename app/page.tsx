@@ -47,11 +47,25 @@ export default function Home() {
         </div>
         {/* pontas dos cards da próxima seção espiando (detalhe do Launchpad) */}
         <div className="hero-peek" aria-hidden="true">
-          <div className="peek-card a">
-            <div className="peek-top"><span>Estética &amp; Saúde</span><span>CLÍNICA GLOW</span><span>AGENDAR</span></div>
+          <div className="sw-card cream peek-a">
+            <div className="sw-top"><span>Estética &amp; Saúde</span><span>CLÍNICA GLOW</span><span>AGENDAR</span></div>
+            <div className="sw-hero">
+              <span className="sw-word">GLOW</span>
+              <div className="sw-visual">
+                <div className="svm-bar"><i /><i /><i /></div>
+                <div className="svm-body"><div className="svm-ey" /><div className="svm-h" /><div className="svm-h short" /><div className="svm-btn" /><div className="svm-img" /></div>
+              </div>
+            </div>
           </div>
-          <div className="peek-card b">
-            <div className="peek-top"><span>Advocacia</span><span>ESCRITÓRIO LEX</span><span>CONTATO</span></div>
+          <div className="sw-card dark peek-b">
+            <div className="sw-top"><span>Advocacia</span><span>ESCRITÓRIO LEX</span><span>CONTATO</span></div>
+            <div className="sw-hero">
+              <span className="sw-word">LEX</span>
+              <div className="sw-visual">
+                <div className="svm-bar"><i /><i /><i /></div>
+                <div className="svm-body"><div className="svm-ey" /><div className="svm-h" /><div className="svm-h short" /><div className="svm-btn" /><div className="svm-img" /></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
