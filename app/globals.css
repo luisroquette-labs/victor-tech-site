@@ -381,10 +381,16 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .sw-hero { position: relative; display: grid; place-items: center; padding: 6px 30px 16px; min-height: 300px; }
 .sw-word { font-family: var(--font-display); font-weight: 700; font-size: clamp(4rem, 11vw, 8.6rem); line-height: 0.9; letter-spacing: -0.03em; }
 .sw-card.dark .sw-word { color: #f3f1ec; }
-.sw-visual { position: absolute; width: 230px; height: 288px; border-radius: 12px; }
-.sw-card.cream .sw-visual { background: linear-gradient(160deg, #e7dccb, #d4c0a6); box-shadow: inset 0 0 0 1px rgba(0,0,0,0.07), 0 20px 50px -20px rgba(0,0,0,0.3); }
-.sw-card.dark .sw-visual { background: radial-gradient(120% 120% at 50% 0%, rgba(255,77,18,0.5), #1c0d05); }
-.sw-card.orange .sw-visual { background: linear-gradient(160deg, #1b0a04, #3a1708); }
+/* mini-site (preview) no lugar da foto — "o site que a gente entrega" */
+.sw-visual { position: absolute; width: 208px; height: 282px; border-radius: 14px; overflow: hidden; background: #f3efe8; border: 5px solid #0b0d11; box-shadow: 0 34px 70px -24px rgba(0,0,0,0.75); }
+.svm-bar { height: 22px; background: #e4ded0; display: flex; align-items: center; gap: 5px; padding: 0 11px; }
+.svm-bar i { width: 6px; height: 6px; border-radius: 50%; background: #bbb2a1; }
+.svm-body { padding: 16px 15px; display: flex; flex-direction: column; gap: 8px; height: calc(100% - 22px); }
+.svm-ey { width: 38%; height: 6px; border-radius: 3px; background: var(--orange); }
+.svm-h { width: 86%; height: 11px; border-radius: 4px; background: #2a2620; }
+.svm-h.short { width: 58%; }
+.svm-btn { width: 52%; height: 20px; border-radius: 999px; background: linear-gradient(180deg, var(--orange-bright), var(--orange)); margin-top: 3px; }
+.svm-img { margin-top: auto; height: 94px; border-radius: 8px; background: linear-gradient(155deg, #dcc9b0, #c2a888); }
 .sw-foot { display: grid; grid-template-columns: 1fr 1fr; }
 .sw-foot span { padding: 18px 30px; font-family: var(--font-ui); font-size: 0.92rem; display: flex; justify-content: space-between; align-items: center; }
 .sw-foot span i { font-style: normal; opacity: 0.6; }

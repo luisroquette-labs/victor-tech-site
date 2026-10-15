@@ -79,7 +79,16 @@ export default function ShowcaseDeck() {
       </div>
       <div className="sw-hero">
         <span className="sw-word">{c.word}</span>
-        <div className="sw-visual" />
+        <div className="sw-visual">
+          <div className="svm-bar"><i /><i /><i /></div>
+          <div className="svm-body">
+            <div className="svm-ey" />
+            <div className="svm-h" />
+            <div className="svm-h short" />
+            <div className="svm-btn" />
+            <div className="svm-img" />
+          </div>
+        </div>
       </div>
       <div className="sw-foot">
         <span>{c.a} <i>→</i></span>

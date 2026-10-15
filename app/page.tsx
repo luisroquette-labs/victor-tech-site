@@ -48,10 +48,10 @@ export default function Home() {
         {/* pontas dos cards da próxima seção espiando (detalhe do Launchpad) */}
         <div className="hero-peek" aria-hidden="true">
           <div className="peek-card a">
-            <div className="peek-top"><span>CURSO</span><span>LANDING PAGE</span><span>CTA</span></div>
+            <div className="peek-top"><span>Estética &amp; Saúde</span><span>CLÍNICA GLOW</span><span>AGENDAR</span></div>
           </div>
           <div className="peek-card b">
-            <div className="peek-top"><span>AUTOMAÇÃO</span><span>IA</span></div>
+            <div className="peek-top"><span>Advocacia</span><span>ESCRITÓRIO LEX</span><span>CONTATO</span></div>
           </div>
         </div>
       </section>
