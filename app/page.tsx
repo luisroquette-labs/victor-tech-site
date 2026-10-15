@@ -45,29 +45,6 @@ export default function Home() {
             <Link href="#projetos" className="btn btn-ghost">{hero.ctaSecondary}</Link>
           </div>
         </div>
-        {/* pontas dos cards da próxima seção espiando (detalhe do Launchpad) */}
-        <div className="hero-peek" aria-hidden="true">
-          <div className="sw-card cream peek-a">
-            <div className="sw-top"><span>Estética &amp; Saúde</span><span>CLÍNICA GLOW</span><span>AGENDAR</span></div>
-            <div className="sw-hero">
-              <span className="sw-word">GLOW</span>
-              <div className="sw-visual">
-                <div className="svm-bar"><i /><i /><i /></div>
-                <div className="svm-body"><div className="svm-ey" /><div className="svm-h" /><div className="svm-h short" /><div className="svm-btn" /><div className="svm-img" /></div>
-              </div>
-            </div>
-          </div>
-          <div className="sw-card dark peek-b">
-            <div className="sw-top"><span>Advocacia</span><span>ESCRITÓRIO LEX</span><span>CONTATO</span></div>
-            <div className="sw-hero">
-              <span className="sw-word">LEX</span>
-              <div className="sw-visual">
-                <div className="svm-bar"><i /><i /><i /></div>
-                <div className="svm-body"><div className="svm-ey" /><div className="svm-h" /><div className="svm-h short" /><div className="svm-btn" /><div className="svm-img" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* SEÇÃO 2 — carrossel editorial (conecta com as pontas de card do hero) */}
