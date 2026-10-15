@@ -424,6 +424,45 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .ribbon { width: 100%; overflow: hidden; margin: 30px 0 0; }
 .ribbon svg { width: 100%; height: auto; display: block; }
 
+/* painéis empilhados (mockups de navegador) subindo no scroll */
+.stack-panels { position: relative; height: 320vh; }
+.sp-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.sp-head { text-align: center; margin-bottom: 3vh; z-index: 70; position: relative; }
+.sp-head h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin-top: 12px; }
+.sp-head .em { color: var(--orange); font-style: italic; }
+.sp-stage { position: relative; width: min(880px, 92vw); height: 54vh; }
+.sp-panel { position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -50%); will-change: transform, opacity; }
+
+.mock { border-radius: 16px; overflow: hidden; border: 1px solid var(--line-strong); background: #0c0e12; box-shadow: 0 50px 100px -40px rgba(0,0,0,0.9); }
+.mock-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #14161b; border-bottom: 1px solid var(--line); }
+.mock-dot { width: 10px; height: 10px; border-radius: 50%; background: #3a3d44; }
+.mock-url { margin-left: 12px; font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); }
+.mock-live { margin-left: auto; font-family: var(--font-ui); font-size: 0.72rem; color: #25d366; }
+.mock-body { min-height: 290px; padding: 28px 32px; display: flex; flex-direction: column; gap: 13px; }
+.mock-body.landing { background: radial-gradient(70% 90% at 72% 0%, rgba(255,77,18,0.15), #0c0e12); }
+.mock-eyebrow { font-family: var(--font-ui); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange-soft); }
+.mock-h { height: 20px; border-radius: 6px; background: linear-gradient(90deg, rgba(255,255,255,0.24), rgba(255,255,255,0.06)); width: 78%; }
+.mock-h.short { width: 50%; }
+.mock-h.center { margin: 0 auto; }
+.mock-btn { align-self: flex-start; padding: 10px 20px; border-radius: 999px; background: linear-gradient(180deg, var(--orange-bright), var(--orange)); color: #fff; font-family: var(--font-ui); font-size: 0.8rem; font-weight: 600; margin-top: 6px; }
+.mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: auto; }
+.mock-grid i { height: 64px; border-radius: 10px; background: rgba(255, 255, 255, 0.05); display: block; }
+.mock-chat { display: flex; flex-direction: column; gap: 10px; min-height: 280px; }
+.mock-chat .mb { max-width: 78%; padding: 10px 14px; border-radius: 12px; font-size: 0.82rem; }
+.mock-chat .mb.lead { align-self: flex-start; background: #1b2824; color: var(--ink-dim); }
+.mock-chat .mb.bot { align-self: flex-end; background: #114d2e; color: #eafff3; }
+.mock-body.chat { background: #0b1412; }
+.mock-body.live { align-items: center; text-align: center; justify-content: center; }
+.mock-pub { width: 56px; height: 56px; border-radius: 50%; background: rgba(37, 211, 102, 0.15); color: #25d366; display: grid; place-items: center; font-size: 1.7rem; margin: 0 auto 10px; }
+
+.sp-caption { position: absolute; bottom: 5vh; left: 0; right: 0; text-align: center; z-index: 70; pointer-events: none; display: flex; flex-direction: column; gap: 3px; }
+.sp-cap-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.sp-cap-sub { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.stack-static { padding: 90px 0; }
+.stack-grid { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 520px; margin: 0 auto; }
+.stack-static-item .sp-tag { display: block; font-family: var(--font-ui); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+
 /* galáxia de tiles 3D */
 .galaxy { position: relative; height: 240vh; }
 .galaxy-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; place-items: center; perspective: 1100px; }

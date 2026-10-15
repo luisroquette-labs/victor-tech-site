@@ -12,6 +12,7 @@ import ManifestoScroll from "../components/ManifestoScroll";
 import TileGalaxy from "../components/TileGalaxy";
 import ProcessFan from "../components/ProcessFan";
 import WavyRibbon from "../components/WavyRibbon";
+import StackPanels from "../components/StackPanels";
 import Accordion from "../components/Accordion";
 import BlogCard from "../components/BlogCard";
 import Nexus from "../components/Nexus";
@@ -159,6 +160,9 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* PAINÉIS EMPILHADOS — do preview ao ar */}
+      <StackPanels />
 
       {/* SIMULADOR DE FATURAMENTO */}
       <section className="section" id="simulador">
