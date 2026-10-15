@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import Plasma from "../components/Plasma";
+import ElectricLava from "../components/ElectricLava";
 import PromptBox from "../components/PromptBox";
 import StatCounter from "../components/StatCounter";
 import Reveal from "../components/Reveal";
@@ -24,7 +24,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" id="inicio">
-        <Plasma />
+        <ElectricLava />
         <div className="wrap hero-inner">
           <span className="eyebrow">⚡ {hero.eyebrow}</span>
           <h1 className="display">
