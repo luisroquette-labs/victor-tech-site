@@ -43,6 +43,15 @@ export default function Home() {
             <Link href="#projetos" className="btn btn-ghost">{hero.ctaSecondary}</Link>
           </div>
         </div>
+        {/* pontas dos cards da próxima seção espiando (detalhe do Launchpad) */}
+        <div className="hero-peek" aria-hidden="true">
+          <div className="peek-card a">
+            <div className="peek-top"><span>CURSO</span><span>LANDING PAGE</span><span>CTA</span></div>
+          </div>
+          <div className="peek-card b">
+            <div className="peek-top"><span>AUTOMAÇÃO</span><span>IA</span></div>
+          </div>
+        </div>
       </section>
 
       {/* STATS */}

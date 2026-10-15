@@ -106,6 +106,13 @@ export default function ScrollGallery({ items }: { items: Item[] }) {
     );
   }
 
+  const goNext = () => {
+    const lenis = (window as unknown as { __lenis?: { scrollTo: (y: number) => void } }).__lenis;
+    const y = window.scrollY + window.innerHeight * 0.82;
+    if (lenis) lenis.scrollTo(y);
+    else window.scrollTo(0, y);
+  };
+
   return (
     <div className="scroll-gallery" ref={wrapRef} style={{ height: `${120 + items.length * 70}vh` }}>
       <div className="sg-sticky">
@@ -134,7 +141,14 @@ export default function ScrollGallery({ items }: { items: Item[] }) {
         <div className="sg-caption">
           <span className="sg-cap-title">{items[active]?.caption || items[active]?.name}</span>
           <span className="sg-cap-sub">{items[active]?.kind}</span>
-          <span className="sg-hint">role para navegar ↓</span>
+        </div>
+        <div className="sg-dots">
+          <div className="sg-dots-pill">
+            {items.map((_, i) => (
+              <span key={i} className={`sg-dot ${i === active ? "on" : ""}`} />
+            ))}
+          </div>
+          <button className="sg-next" onClick={goNext} aria-label="Próximo projeto">›</button>
         </div>
       </div>
     </div>
