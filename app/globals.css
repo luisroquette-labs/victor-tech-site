@@ -23,9 +23,9 @@
   --cream: #f1ebdf;
   --cream-ink: #1a1410;
 
-  --font-display: var(--font-display), Georgia, serif;
-  --font-body: var(--font-body), system-ui, sans-serif;
-  --font-ui: var(--font-ui), ui-monospace, monospace;
+  --font-display: var(--font-serif), "Times New Roman", Times, serif;
+  --font-body: var(--font-sans), system-ui, sans-serif;
+  --font-ui: var(--font-sans), system-ui, sans-serif;
 
   --wrap: 1180px;
   --radius: 18px;
@@ -77,12 +77,12 @@ img { max-width: 100%; display: block; }
 .wrap { width: min(var(--wrap), 92vw); margin: 0 auto; }
 
 /* ---------- tipografia ---------- */
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.04; margin: 0; letter-spacing: -0.01em; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.06; margin: 0; letter-spacing: -0.005em; }
 .display {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.0;
 }
 .serif-italic { font-style: italic; font-weight: 500; }
 
@@ -346,7 +346,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .proj.cyan:hover { border-color: rgba(40,211,236,0.5); }
 .proj .proj-top { display: flex; justify-content: space-between; align-items: flex-start; }
 .proj .kind { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.proj .giant { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.02em; margin: 24px 0 14px; line-height: 0.95; }
+.proj .giant { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.015em; margin: 24px 0 14px; line-height: 0.98; }
 .proj.orange .giant { color: var(--orange-soft); }
 .proj.cyan .giant { color: var(--cyan); }
 .proj p { font-size: 0.92rem; color: var(--ink-dim); margin: 0 0 16px; }
@@ -356,6 +356,34 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 .proj .tags span { font-family: var(--font-ui); font-size: 0.68rem; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .proj .arrow { font-family: var(--font-ui); font-size: 0.82rem; color: var(--muted); transition: color 0.2s, transform 0.2s; }
 .proj:hover .arrow { color: var(--orange); transform: translateX(3px); }
+/* galeria pinned com scroll horizontal 3D */
+.scroll-gallery { position: relative; }
+.sg-sticky {
+  position: sticky; top: 0; height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.sg-track {
+  display: flex; gap: 46px; align-items: center;
+  padding: 0 calc(50vw - 300px);
+  will-change: transform;
+}
+.sg-card {
+  flex: none; width: min(600px, 82vw); min-height: 380px;
+  will-change: transform, opacity; transform-origin: center center;
+  box-shadow: 0 60px 120px -50px rgba(0,0,0,0.9);
+}
+.sg-card:hover { transform: none; } /* o JS controla o transform */
+.sg-caption {
+  position: absolute; bottom: 7vh; left: 0; right: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center;
+  pointer-events: none;
+}
+.sg-cap-title { font-family: var(--font-display); font-size: 1.6rem; color: var(--ink); }
+.sg-cap-sub { font-family: var(--font-ui); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.sg-hint { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-top: 10px; animation: sg-bob 1.8s ease-in-out infinite; }
+@keyframes sg-bob { 50% { transform: translateY(4px); opacity: 0.6; } }
+
 .deck-mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
 .deck-mini .m { text-align: center; padding: 20px; border-left: 1px solid var(--line); }
 .deck-mini .m:first-child { border-left: 0; }
@@ -364,7 +392,7 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 
 /* ---------- manifesto ---------- */
 .manifesto { padding: 120px 0; text-align: center; }
-.manifesto p { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4.6rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; margin: 0 auto; }
+.manifesto p { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4.6rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.015em; max-width: 16ch; margin: 0 auto; }
 .manifesto .accent { color: var(--orange); font-style: italic; font-weight: 500; }
 
 /* ---------- sobre ---------- */

@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Space_Grotesk } from "next/font/google";
+import { Newsreader, Inter } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+// Equivalentes livres mais próximos das fontes da referência (Hotmart):
+// Newsreader ≈ "Hotmart Display" (serif transicional elegante)
+// Inter ≈ "Hotmart Sans" (grotesca neutra) — usada no corpo e nos labels.
+const display = Newsreader({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "900"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-display",
+  variable: "--font-serif",
   display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const grotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ui",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -39,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable} ${grotesk.variable}`}>
+    <html lang="pt-BR" className={`${display.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   );

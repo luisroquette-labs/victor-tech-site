@@ -181,6 +181,7 @@ export const portfolio = {
       live: "",
       metric: "+320% em conversões",
       accent: "orange",
+      caption: "Landing page de alta conversão",
     },
     {
       slug: "apex-law",
@@ -191,6 +192,7 @@ export const portfolio = {
       live: "https://apex-lawyers.com",
       metric: "SEO otimizado",
       accent: "cyan",
+      caption: "Página corporativa jurídica",
     },
     {
       slug: "fitpulse",
@@ -201,6 +203,7 @@ export const portfolio = {
       live: "https://fitpulse.app",
       metric: "Design vibrante",
       accent: "orange",
+      caption: "Lançamento de aplicativo",
     },
   ],
   mini: [

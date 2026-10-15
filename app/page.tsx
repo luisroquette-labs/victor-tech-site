@@ -7,6 +7,7 @@ import StatCounter from "../components/StatCounter";
 import Reveal from "../components/Reveal";
 import RevenueSim from "../components/RevenueSim";
 import WhatsAppSim from "../components/WhatsAppSim";
+import ScrollGallery from "../components/ScrollGallery";
 import Accordion from "../components/Accordion";
 import BlogCard from "../components/BlogCard";
 import Nexus from "../components/Nexus";
@@ -171,34 +172,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PORTFÓLIO */}
-      <section className="section" id="projetos">
+      {/* PORTFÓLIO — galeria pinned com scroll horizontal 3D */}
+      <section className="section" id="projetos" style={{ paddingBottom: 0 }}>
         <div className="wrap">
           <Reveal className="section-head">
             <span className="eyebrow">{portfolio.eyebrow}</span>
             <h2>{portfolio.title}</h2>
             <p className="lead">{portfolio.lead}</p>
           </Reveal>
-          <div className="deck">
-            {portfolio.items.map((p) => (
-              <Reveal key={p.slug} className={`proj ${p.accent}`}>
-                <div className="proj-top">
-                  <span className="kind">{p.kind}</span>
-                  <span className="metric">{p.metric}</span>
-                </div>
-                <div>
-                  <div className="giant">{p.name}</div>
-                  <p>{p.blurb}</p>
-                </div>
-                <div className="proj-foot">
-                  <div className="tags">
-                    {p.tags.map((t) => <span key={t}>{t}</span>)}
-                  </div>
-                  <Link href={`/projetos/${p.slug}`} className="arrow">Ver detalhes →</Link>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+        </div>
+        <ScrollGallery items={portfolio.items} />
+        <div className="wrap">
           <div className="deck-mini">
             {portfolio.mini.map((m) => (
               <StatCounter key={m.label} n={m.n} prefix={m.prefix} suffix={m.suffix} label={m.label} />
