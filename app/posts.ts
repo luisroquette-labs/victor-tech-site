@@ -9,7 +9,7 @@ export type Post = {
   title: string;
   category: string;
   excerpt: string;
-  date: string; // YYYY-MM-DD
+  date: string;
   readMin: number;
   body: Block[];
 };

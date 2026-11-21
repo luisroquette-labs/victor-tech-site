@@ -3,9 +3,6 @@ import { Newsreader, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 
-// Equivalentes livres mais próximos das fontes da referência (Hotmart):
-// Newsreader ≈ "Hotmart Display" (serif transicional elegante)
-// Inter ≈ "Hotmart Sans" (grotesca neutra) — usada no corpo e nos labels.
 const display = Newsreader({
   subsets: ["latin"],
   weight: ["400", "500", "600"],

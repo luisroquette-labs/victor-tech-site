@@ -1,5 +1,3 @@
-// Conteúdo do site Victor.Tech — migrado fielmente de victortech1.vercel.app,
-// reescrito no estilo editorial "Launchpad". Edite aqui para ajustar textos.
 
 export const person = {
   brand: "Victor.Tech",
@@ -31,7 +29,6 @@ export const hero = {
   ctaSecondary: "Ver projetos",
 };
 
-// Prompts que o "construtor" digita em loop na caixa — espírito Launchpad.
 export const promptExamples = [
   "Crie uma landing page para minha clínica de estética…",
   "Quero um site premium para meu escritório de advocacia…",
@@ -137,7 +134,6 @@ export const automacao = {
   },
 };
 
-// Simulador de faturamento — réplica da calculadora do site atual.
 export const revenueSim = {
   eyebrow: "Simulador de faturamento",
   title: "Quanto dinheiro o seu site atual está deixando na mesa?",
@@ -156,7 +152,6 @@ export const revenueSim = {
   cta: "Garantir este faturamento no WhatsApp",
 };
 
-// Simulação de conversa (WhatsApp) — roteiro ilustrativo.
 export const whatsappSim = {
   header: "Online — respondendo automaticamente",
   messages: [
@@ -215,7 +210,6 @@ export const portfolio = {
   ],
 };
 
-// Detalhe de cada caso — migrado das páginas internas do site atual.
 export const projectDetails: Record<
   string,
   { label: string; title: string; blurb: string; live: string; features: { title: string; body: string }[]; cta: string }

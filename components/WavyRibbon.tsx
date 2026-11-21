@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-// Fita ondulante (flamulando): banda laranja em onda senoidal com texto preto
-// repetido fluindo ao longo dela. Inspirado na faixa do Hotmart Launchpad.
 const W = 1600, H = 230, MID = 115, AMP = 42, WAVES = 2;
 
 function buildPath(phase: number): string {
@@ -31,7 +29,7 @@ export default function WavyRibbon({ text = "Perguntas frequentes" }: { text?: s
     const loop = () => {
       t += 0.012;
       offset -= 1.3;
-      if (offset < -900) offset += 900; // ~largura de uma repetição
+      if (offset < -900) offset += 900;
       pathRef.current?.setAttribute("d", buildPath(t));
       textPathRef.current?.setAttribute("startOffset", String(offset));
       raf = requestAnimationFrame(loop);

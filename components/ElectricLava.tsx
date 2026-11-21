@@ -2,9 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-// Shader portado do "Electric Mist" (chamaac, 21st.dev) — turbulência fbm + divisão
-// para veios brilhantes. Reescrito em WebGL cru (sem three.js) e recolorido para
-// lava laranja no preto, no espírito do hero da referência (Hotmart Launchpad).
 const VERT = `
 attribute vec2 a_pos;
 varying vec2 vUv;
@@ -55,17 +52,12 @@ void main(){
 
   float rz = fbm(p*0.9 - time*0.7, uDetail, 5);
   rz *= 12.0;
-  // modulação ORIGINAL: mergulha a zero -> cria as bandas escuras (mantém o preto)
   rz *= abs(sin(bp.x*0.5 - time*4.0 - 2.0)) * 1.0;
 
-  // fórmula original (com sqrt); uColor é dim -> fundo escuro, veios brilhantes
   vec3 col = uColor / (uBrightness - rz);
   col = sqrt(abs(col));
-  // puxa o fundo pro preto e realça os veios
   col = max(col - 0.30, 0.0) * 1.5;
-  // cap suave p/ não estourar em branco
   col = col / (1.0 + col * 0.3);
-  // vinheta suave: afunda levemente o centro (onde fica o texto)
   float vig = smoothstep(0.05, 0.95, length(vUv - vec2(0.5, 0.5)));
   col *= mix(0.6, 1.0, vig);
 
@@ -73,8 +65,7 @@ void main(){
 }
 `;
 
-// Parâmetros ajustáveis do visual
-const COLOR = [0.34, 0.11, 0.02]; // laranja dim — fundo escuro, veios laranja brilhantes
+const COLOR = [0.34, 0.11, 0.02];
 const DETAIL = 1.4;
 const DISTORTION = 2.6;
 const BRIGHTNESS = 1.0;

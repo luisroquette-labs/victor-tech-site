@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { initAudio, playThock } from "./sound";
 
-// Painéis (mockups de navegador) empilhados que sobem/trocam no scroll.
-// Inspirado nas seções "Preview muda na hora / Publica dali mesmo" do Launchpad.
 
 const PANELS = [
   { tag: "Preview em tempo real", url: "preview.victor.tech", title: "Landing page de alta conversão", kind: "landing", cap: "Do briefing ao preview" },
@@ -76,19 +74,19 @@ export default function StackPanels() {
       const rect = wrap.getBoundingClientRect();
       const span = wrap.offsetHeight - vh;
       const prog = Math.min(1, Math.max(0, -rect.top / Math.max(1, span)));
-      const pos = prog * PANELS.length - 0.5; // qual painel está "na frente"
+      const pos = prog * PANELS.length - 0.5;
 
       panelRefs.current.forEach((el, i) => {
         if (!el) return;
-        const d = i - pos; // >0 atrás/futuro, 0 frente, <0 já passou (sobe e some)
+        const d = i - pos;
         let y: number, scale: number, op: number, z: number;
         if (d >= 0) {
-          y = -d * 46;          // painéis de trás ficam acima, empilhados
+          y = -d * 46;
           scale = 1 - d * 0.07;
           op = Math.max(0, 1 - d * 0.5);
           z = 50 - Math.round(d * 10);
         } else {
-          y = d * 150;          // ao passar, sobe e sai
+          y = d * 150;
           scale = 1 - Math.min(0.1, -d * 0.1);
           op = Math.max(0, 1 + d * 1.4);
           z = 60;
