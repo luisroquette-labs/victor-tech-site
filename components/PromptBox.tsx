@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { whatsappHref } from "../app/content";
 
-// Caixa de prompt que "digita" exemplos em loop — espírito Launchpad.
 export default function PromptBox({ examples }: { examples: string[] }) {
   const [text, setText] = useState("");
   const i = useRef(0);

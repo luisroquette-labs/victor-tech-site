@@ -3,15 +3,11 @@
 import { Fragment, useEffect, useRef, useState, type CSSProperties } from "react";
 import { initAudio, playTick } from "./sound";
 
-// pseudo-aleatório determinístico por índice (SSR-safe: só usado quando shatter>0)
 function rnd(i: number): number {
   const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;
   return x - Math.floor(x);
 }
 
-// Manifesto "máquina de escrever": ao rolar, o texto é digitado caractere por
-// caractere, com som de tecla. Palavras agrupadas (nunca quebram no meio);
-// a quebra de linha só acontece entre palavras. Fonte sans grande.
 export default function ManifestoScroll({ lead, accent }: { lead: string; accent: string }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [n, setN] = useState(0);
@@ -22,7 +18,6 @@ export default function ManifestoScroll({ lead, accent }: { lead: string; accent
   const chars = Array.from(full);
   const accentStart = Array.from(leadText).length;
 
-  // tokens: palavras e espaços, com índice global de caractere
   const tokens: { space: boolean; text: string; start: number }[] = [];
   {
     let idx = 0;
@@ -32,7 +27,6 @@ export default function ManifestoScroll({ lead, accent }: { lead: string; accent
       idx += Array.from(part).length;
     }
   }
-  // palavra "ativa" (onde fica o cursor)
   let activeWord = -1;
   tokens.forEach((t, ti) => {
     if (!t.space && t.start < Math.max(n, 1)) activeWord = ti;
@@ -59,7 +53,6 @@ export default function ManifestoScroll({ lead, accent }: { lead: string; accent
         prev = typed;
         setN(typed);
       }
-      // espatifar as letras ao sair (seção de baixo "sobe" e quebra o texto)
       const sh = Math.round(Math.min(1, Math.max(0, (prog - 0.82) / 0.16)) * 100) / 100;
       setShatter((p) => (p === sh ? p : sh));
     };
@@ -72,7 +65,6 @@ export default function ManifestoScroll({ lead, accent }: { lead: string; accent
       window.removeEventListener("resize", onScroll);
       if (raf) cancelAnimationFrame(raf);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

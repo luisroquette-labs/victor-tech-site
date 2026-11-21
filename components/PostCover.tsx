@@ -1,4 +1,3 @@
-// Capa SVG determinística por slug — brasas/circuito na paleta do site.
 function mulberry32(a: number) {
   return () => {
     a |= 0;

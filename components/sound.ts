@@ -1,5 +1,3 @@
-// Som sintetizado (Web Audio) compartilhado pelo site — sem arquivos.
-// Desbloqueia no primeiro gesto do usuário (política de autoplay).
 
 let ctx: AudioContext | null = null;
 
@@ -23,7 +21,6 @@ export function initAudio() {
 }
 
 let lastTick = 0;
-// clique seco de tecla mecânica
 export function playTick(volume = 0.09) {
   const c = getCtx();
   if (!c || c.state !== "running") return;
@@ -46,7 +43,6 @@ export function playTick(volume = 0.09) {
   src.start(now);
 }
 
-// "thock" grave de carta caindo
 export function playThock(volume = 0.16) {
   const c = getCtx();
   if (!c || c.state !== "running") return;

@@ -14,8 +14,6 @@ type Item = {
   caption?: string;
 };
 
-// Galeria "pinned": o scroll vertical desliza os cards na horizontal,
-// com perspectiva 3D (card central reto, laterais inclinados). Estilo Launchpad.
 export default function ScrollGallery({ items }: { items: Item[] }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -48,13 +46,12 @@ export default function ScrollGallery({ items }: { items: Item[] }) {
       const x = -p * maxX;
       track.style.transform = `translate3d(${x}px,0,0)`;
 
-      // rotação/scale por card conforme a distância do centro da tela
       let best = 0, bestD = Infinity;
       cardRefs.current.forEach((c, i) => {
         if (!c) return;
         const r = c.getBoundingClientRect();
         const cx = r.left + r.width / 2;
-        const d = (cx - vw / 2) / (vw / 2); // -1 (esq) .. 0 (centro) .. 1 (dir)
+        const d = (cx - vw / 2) / (vw / 2);
         const ad = Math.abs(d);
         const rotY = Math.max(-30, Math.min(30, -d * 27));
         const scale = 1 - Math.min(0.24, ad * 0.17);
@@ -82,7 +79,6 @@ export default function ScrollGallery({ items }: { items: Item[] }) {
     };
   }, [items.length]);
 
-  // Fallback estático (mobile / reduced-motion): grade vertical simples.
   if (!enabled) {
     return (
       <div className="deck">

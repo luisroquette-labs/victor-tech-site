@@ -28,7 +28,6 @@ export default function Home() {
     <>
       <SiteHeader />
 
-      {/* HERO */}
       <section className="hero" id="inicio">
         <ElectricLava />
         <div className="wrap hero-inner">
@@ -47,10 +46,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEÇÃO 2 — carrossel editorial (conecta com as pontas de card do hero) */}
       <ShowcaseDeck />
 
-      {/* STATS */}
       <div className="wrap">
         <div className="stats-row">
           {stats.map((s) => (
@@ -59,7 +56,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* DIFERENCIAIS */}
       <section className="section" id="diferenciais">
         <div className="wrap">
           <Reveal className="section-head">
@@ -79,7 +75,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESSO (leque) */}
       <section className="section" id="processo">
         <div className="wrap">
           <Reveal className="section-head">
@@ -91,7 +86,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* IA & AUTOMAÇÃO */}
       <section className="section" id="ia">
         <div className="wrap">
           <Reveal className="section-head">
@@ -118,7 +112,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* comparativo de horas */}
           <Reveal className="compare">
             <div className="section-head" style={{ marginTop: 56, marginBottom: 28 }}>
               <h2 style={{ fontSize: "2rem" }}>{automacao.compare.title}</h2>
@@ -156,10 +149,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PAINÉIS EMPILHADOS — do preview ao ar */}
       <StackPanels />
 
-      {/* SIMULADOR DE FATURAMENTO */}
       <section className="section" id="simulador">
         <div className="wrap">
           <Reveal className="section-head">
@@ -173,7 +164,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PORTFÓLIO — galeria pinned com scroll horizontal 3D */}
       <section className="section" id="projetos" style={{ paddingBottom: 0 }}>
         <div className="wrap">
           <Reveal className="section-head">
@@ -192,13 +182,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALÁXIA — voa por um campo de tiles (negócios/serviços) no scroll */}
       <TileGalaxy />
 
-      {/* MANIFESTO — máquina de escrever no scroll, com som de teclado */}
       <ManifestoScroll lead={manifesto.lead} accent={manifesto.accent} />
 
-      {/* SOBRE (teaser) */}
       <section className="section" id="sobre-teaser">
         <div className="wrap">
           <div className="about">
@@ -218,7 +205,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOG teaser */}
       <section className="section" id="blog">
         <div className="wrap">
           <Reveal className="section-head">
@@ -235,10 +221,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FITA ONDULANTE */}
       <WavyRibbon text="Perguntas frequentes" />
 
-      {/* FAQ */}
       <section className="section" id="faq">
         <div className="wrap">
           <Reveal className="section-head" >
@@ -249,7 +233,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTATO */}
       <section className="section" id="contato">
         <div className="wrap">
           <Reveal className="contact-band">

@@ -5,7 +5,6 @@ import { initAudio, playThock } from "./sound";
 
 type Step = { n: string; title: string; body: string };
 
-// Posições finais (combinam com .fan-card.c1/.c2/.c3 do CSS)
 const FINAL = [
   { rot: -3, y: 0 },
   { rot: 1, y: 10 },
@@ -40,9 +39,8 @@ export default function ProcessFan({ steps }: { steps: Step[] }) {
       cardRefs.current.forEach((el, i) => {
         if (!el) return;
         const f = FINAL[i] || FINAL[0];
-        // cada carta é "dada" numa faixa do progresso, escalonada
         const local = Math.min(1, Math.max(0, (prog - i * 0.16 - 0.04) / 0.34));
-        const e = 1 - Math.pow(1 - local, 3); // easeOutCubic
+        const e = 1 - Math.pow(1 - local, 3);
         const y = (1 - e) * 170 + f.y;
         const rot = (1 - e) * (f.rot * 5 - 16) + f.rot;
         el.style.transform = `translateY(${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg)`;
@@ -51,7 +49,7 @@ export default function ProcessFan({ steps }: { steps: Step[] }) {
           landed[i] = true;
           playThock();
         }
-        if (local < 0.3) landed[i] = false; // rearma ao sair (scroll pra cima)
+        if (local < 0.3) landed[i] = false;
       });
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };

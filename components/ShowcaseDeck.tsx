@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Seção 2 — carrossel editorial (estilo Hotmart Launchpad): cards com palavra
-// gigante + visual + labels + rodapé, deslizando na horizontal em 3D no scroll.
 const CARDS = [
   { bg: "cream", eyebrow: "Estética & Saúde", center: "CLÍNICA GLOW", right: "AGENDAR", word: "GLOW", a: "tratamentos", b: "agendar", cap: "Landing page que lota a agenda", kind: "Landing de alta conversão" },
   { bg: "dark", eyebrow: "Advocacia", center: "ESCRITÓRIO LEX", right: "CONTATO", word: "LEX", a: "áreas de atuação", b: "contato", cap: "Autoridade que fecha clientes de alto valor", kind: "Site premium corporativo" },

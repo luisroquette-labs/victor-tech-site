@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { whatsappHref, person } from "../app/content";
 
-// N.E.X.U.S. — assistente flutuante (mock front-end) + atalho WhatsApp.
 export default function Nexus() {
   const [open, setOpen] = useState(false);
 

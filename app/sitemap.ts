@@ -4,7 +4,6 @@ import { projectDetails } from "./content";
 
 export const dynamic = "force-static";
 
-// Troque pelo domínio real quando o Victor tiver um.
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || "https://luisroquette-labs.github.io/victor-tech-site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
